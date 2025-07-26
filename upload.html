@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style\upload.css">
+  <title>DocVerify Validation</title>
+</head>
+<body>
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-logo">
+        <span class="logo-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="419.116" viewBox="0 0 512 419.116">
+            <!-- Logo SVG code -->
+          </svg>
+        </span>
+      </div>
+      <button class="btn-close" onclick="" href="main.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <!-- Close button SVG code -->
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h2 class="modal-title">Upload a file</h2>
+      <p class="modal-description">Attach the file below</p>
+      <!-- Replaced upload area code from the second snippet -->
+      <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+        <label>Upload File <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image">&times;</a></label>
+        <label class="custom-file-container__custom-file">
+          <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="application/pdf" multiple aria-label="Choose File">
+          <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+          <span class="custom-file-container__custom-file__custom-file-control"></span>
+        </label>
+        <div class="custom-file-container__image-preview"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="cancelAction()" href="main.html">Cancel</button>
+      <button class="btn-primary" onclick="uploadAction()" href="">Upload File</button>
+    </div>
+  </div>
+
+  <div class="pdfwork">
+    <div class="afterupload" style="display: none;">
+      <span>Select Page</span>
+      <select class="selectpage" onchange="afterProcess()"></select>
+      <a href="" class="download" download>Download Pdf Text</a>
+      <textarea class="pdftext"></textarea>
+      <p id="verificationMessage" style="color: green; display: none;">THIS RESULT IS SUCCESSFULLY MATCHED WITH PASSBASE API VERIFICATION, THE DOCUMENT IS VERIFIED.</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js" integrity="sha512-ml/QKfG3+Yes6TwOzQb7aCNtJF4PUyha6R3w8pSTo/VJSywl7ZreYvvtUso7fKevpsI+pYVVwnu82YO0q3V6eg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+<script src="script\upload.js"></script>
+</html>
